@@ -1,0 +1,47 @@
+#Etude 9
+ @Author Luka Didham
+ @Author Hayden Knox
+ @Author Ariana Van Lith
+ @Author Connor Dobson
+ @Author Akshay Menon
+Program which takes in an alphabet of any character or an int 1-26 and creates the longest unique string without repreating substring patterns.
+Program uses 3 main variables, alphabet entered by user, array of two character long sequences used and the current longest string
+of current user input. The process follows,
+1. Get alphabet by converting user input into non-repeating alphabet from a-z
+2. Start longest string with first letter of alphabet
+3. Attempt to add an extra character onto longest string. If the sequence of the last character of longest string + character attempting to be added is not
+contained within array sequences used we will add character to end of string and add sequence added to sequences used array. If the sequnece is already
+inside the sequnces used array we loop through the alphabet attempting to add each letter to the end of the longest string.
+4. If we cannot add any of the alphabet to the end of the current structure of longest string we remove the last character and attempt to add the alphabet
+avoiding the character which lead us to an impossible pattern by incrementing starting char by one.
+5. Repeat process 3 and 4 until longest string length is equal to value of alphabet_length^2+1
+
+Uses import classes regex and math. We use regex.Pattern to pattern match the user input and distinguish between int and alphabet literal inputs.
+Uses math.pow class to work out when max string has been reached with the value of alphabet_length^2+1.
+
+##How to Compile
+To compile use the Kotlin compiler supported in most IDE's. Created and tested
+in IntelliJ IDEA 2021.
+
+##Test Results
+Input Alphabet to be used or int between 1-26
+3
+aabacbbcca
+mfqwef
+mmfmqmwmeffqfwfeqqwqewweem
+26
+aabacadaeafagahaiajakalamanaoapaqarasatauavawaxayazbbcbdbebfbgbhbibjbkblbmbnbobpbqbrbsbtbubvbwbxbybzccdcecfcgchcicjckclcmcncocpcqcrcsctcucvcwcxcyczddedfdgdhdidjdkdldmdndodpdqdrdsdtdudvdwdxdydzeefegeheiejekelemeneoepeqereseteuevewexeyezffgfhfifjfkflfmfnfofpfqfrfsftfufvfwfxfyfzgghgigjgkglgmgngogpgqgrgsgtgugvgwgxgygzhhihjhkhlhmhnhohphqhrhshthuhvhwhxhyhziijikiliminioipiqirisitiuiviwixiyizjjkjljmjnjojpjqjrjsjtjujvjwjxjyjzkklkmknkokpkqkrksktkukvkwkxkykzllmlnlolplqlrlsltlulvlwlxlylzmmnmompmqmrmsmtmumvmwmxmymznnonpnqnrnsntnunvnwnxnynzoopoqorosotouovowoxoyozppqprpsptpupvpwpxpypzqqrqsqtquqvqwqxqyqzrrsrtrurvrwrxryrzsstsusvswsxsyszttutvtwtxtytzuuvuwuxuyuzvvwvxvyvzwwxwywzxxyxzyyzza
+27
+Entered int 27 is longer than the English Alphabet. Int must be between 1-26
+0
+Entered int 0 is cannot be entered as is less than one
+wejojf wfk
+Blank spaces detected. Please enter one complete word
+Input cannot be converted to an Int or a String. Acceptable input is numbers 1-26 or letters a-z
+ndjwen93294
+Cannot convert input to int
+Input cannot be converted to an Int or a String. Acceptable input is numbers 1-26 or letters a-z
+AaBbCc
+aabacbbcca
+!@#$%^&*(
+!!@!#!$!%!^!&!*!(@@#@$@%@^@&@*@(##$#%#^#&#*#($$%$^$&$*$(%%^%&%*%(^^&^*^(&&*&(**((!
